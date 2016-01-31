@@ -1,0 +1,7 @@
+<h2 ng-bind="questionsCtrl.selectedQuestion.question"></h2>
+<h3 ng-bind="questionsCtrl.selectedQuestion.description"></h3>
+<h3>Your Answer:</h3>
+<p><textarea ng-model="questionsCtrl.newAnswer.answer" require></textarea></p>
+<h3>Supporting details for your answer (optional)</h3>
+<p><textarea ng-model="questionsCtrl.newAnswer.details" require></textarea></p>
+<p><button ng-click="questionsCtrl.addAnswer(questionsCtrl.newAnswer, questionsCtrl.selectedQuestion)">Submit</button> <a href="#/"><button>Cancel</button></a></p>

@@ -1,0 +1,10 @@
+<h2 ng-bind="questionsCtrl.selectedQuestion.question"></h2>
+<h3 ng-bind="questionsCtrl.selectedQuestion.description"></h3>
+<div ng-repeat="answer in questionsCtrl.selectedQuestion.answers | orderBy:'-likes'">
+	<h3><span ng-bind="answer.answer_creator"></span>:</h3>
+	<h4 ng-bind="answer.answer"></h4>
+	<p ng-bind="answer.details"></p>
+	<p><span ng-bind="answer.likes"></span> likes</p>
+	<p><button ng-click="questionsCtrl.addLike(answer)">Like!</button></p>
+</div>
+<a href="#/"><button>Back</button></a>

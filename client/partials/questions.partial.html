@@ -1,0 +1,17 @@
+<h3>Welcome <span ng-bind="main.user"></span></h3>
+<!-- <a href="/", target="_self"><button >Logout</button></a></h3> -->
+<h4>Latest Questions</h4>
+<p><input type="text" class="pull-right" ng-model="filter_name" placeholder="search..."></p>
+<table>
+	<thead>	
+		<th>Question</th>
+		<th>Answers</th>
+		<th>Action</th>
+	</thead>
+	<tr ng-repeat="question in questionsCtrl.questions|filter:filter_name">
+		<!-- <td ng-bind="appt.date"></td> -->
+		<td ng-bind="question.question"></td>
+		<td ng-bind="question.answers.length"></td>
+		<td><button ng-click="questionsCtrl.showQuestionSelect(question)">Show</button>   <button ng-click="questionsCtrl.answerQuestionSelect(question)">Answer</button></td>
+	</tr>
+</table>
